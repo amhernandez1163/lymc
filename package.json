@@ -20,7 +20,7 @@
     "url": "https://github.com/amhernandez1163/project-3-mern/issues"
   },
   "homepage": "https://github.com/amhernandez1163/project-3-mern#readme",
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^7.2.2"
   }
 }
