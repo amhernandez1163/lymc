@@ -16,7 +16,7 @@ const resolvers = {
 		},
 
 		characters: async () => {
-			return Characters.find();
+			return Character.find();
 		},
 	},
 

@@ -33,7 +33,7 @@ const SearchCharacters = () => {
 				characterId: character.id,
 				// authors: character.volumeInfo.authors || ["No author to display"],
 				// title: character.volumeInfo.title,
-				description: character.volumeInfo.description,
+				description: character.description,
 				// image: character.volumeInfo.imageLinks?.thumbnail || "",
 			}));
 
