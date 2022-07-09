@@ -15,6 +15,7 @@ const resolvers = {
       throw new AuthenticationError("I am Groot. Translation: Not logged in!");
     },
   },
+
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -47,16 +48,9 @@ const resolvers = {
       if (context.user) {
         console.log(character);
         const updateUser = await User.findOneAndUpdate(
-          {
-            _id: context.user._id,
-          },
-          {
-            $addToSet: { savedCharacters: character },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
+          { _id: context.user._id },
+          { $addToSet: { savedCharacters: character } },
+          { new: true, runValidators: true }
         );
         console.log(updateUser);
         return updateUser;

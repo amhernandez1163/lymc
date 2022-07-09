@@ -30,7 +30,6 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     saveCharacter(name: String!, characterId: String!, image: String!)
 }
-
 `;
 
 module.exports = typeDefs;
