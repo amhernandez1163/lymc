@@ -17,7 +17,8 @@ The ability to build and view your profile can be accessed once you sign up or l
 
 Make sure you're up-to-date on all the newest and most classic Marvel characters. As a way to equalize the playing field for people with different levels of Marvel knowledge, this application was created. It can be used by anyone, regardless of their level of fandom. Therefore, we invite you all to come talk Marvel with us.
 
-## Screen Shot of application goes here
+## MVP Requirements 
+![screenshot](/client/public/assets/img/MVP%20Requirements.png))
 
 ## How to install
 
