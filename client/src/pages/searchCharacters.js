@@ -12,7 +12,7 @@ const SearchCharacters = () => {
 		return () => saveCharacterIds(savedCharacterIds);
 	});
 
-	// create method to search for books and set state on form submit
+	// create method to search for characters and set state on form submit
 	const handleFormSubmit = async (event) => {
 		event.preventDefault();
 
@@ -29,7 +29,7 @@ const SearchCharacters = () => {
 
 			const { items } = await response.json();
 
-			const bookData = items.map((character) => ({
+			const characterData = items.map((character) => ({
 				characterId: character.id,
 				// authors: character.volumeInfo.authors || ["No author to display"],
 				// title: character.volumeInfo.title,
@@ -37,7 +37,7 @@ const SearchCharacters = () => {
 				// image: character.volumeInfo.imageLinks?.thumbnail || "",
 			}));
 
-			setSearchedCharacters(bookData);
+			setSearchedCharacters(characterData);
 			setSearchInput("");
 		} catch (err) {
 			console.error(err);
@@ -47,7 +47,7 @@ const SearchCharacters = () => {
 	// create function to handle saving a character to our database
 	// const handleSaveCharacter = async (characterId) => {
 	// 	// find the character in `searchedCharacters` state by the matching id
-	// 	const bookToSave = searchedCharacters.find(
+	// 	const characterToSave = searchedCharacters.find(
 	// 		(character) => character.characterId === characterId
 	// 	);
 
@@ -59,14 +59,14 @@ const SearchCharacters = () => {
 	// 	}
 
 	// 	try {
-	// 		const response = await saveCharacter(bookToSave, token);
+	// 		const response = await saveCharacter(characterToSave, token);
 
 	// 		if (!response.ok) {
 	// 			throw new Error("something went wrong!");
 	// 		}
 
 	// 		// if character successfully saves to user's account, save character id to state
-	// 		setSavedCharacterIds([...savedCharacterIds, bookToSave.characterId]);
+	// 		setSavedCharacterIds([...savedCharacterIds, characterToSave.characterId]);
 	// 	} catch (err) {
 	// 		console.error(err);
 	// 	}
