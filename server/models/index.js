@@ -1,3 +1,3 @@
 const User = require("./User");
 
-module.exports = { User, Character };
+module.exports = { User, characterSchema };
