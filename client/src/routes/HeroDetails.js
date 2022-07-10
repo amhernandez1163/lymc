@@ -28,7 +28,7 @@ export default function HeroDetails() {
 			<div className="hero_details-container">
 				<img
 					src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
-					alt="hero image full size"
+					alt="hero full size"
 				/>
 				<div className="hero_details">
 					<h4>Name</h4>
