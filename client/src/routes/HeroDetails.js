@@ -5,17 +5,23 @@ import { useParams } from "react-router-dom";
 import { fetchHero } from "../utils/utils";
 
 export default function HeroDetails() {
-	let { id } = useParams();
+	const { id } = useParams();
+
+	console.log("id from url", id);
 
 	const [hero, setHero] = useState();
 
 	useEffect(() => {
 		fetchHero(id)
-			.then((data) => setHero(data[0]))
+			.then((data) => {
+				console.log(data);
+				setHero(data.data.results[0]);
+			})
 			.catch((err) => console.error(err));
 	}, []);
 
-	if (!hero) return;
+	if (!hero) return; // If hero is null, undefined, or falsy, return
+	console.log("hero", hero);
 
 	return (
 		<div className="container large">
