@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 //use for the User's saveChararcter array in User.js
 
@@ -19,5 +19,5 @@ const characterSchema = new Schema({
   },
 });
 
-// const Character = model("Character", characterSchema);
+const Character = model("Character", characterSchema);
 module.exports = characterSchema;
