@@ -6,17 +6,12 @@ import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const SignupForm = () => {
-  // set initial form state
-  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
-  // set state for form validation
-  const [validated] = useState(false);
-  // set state for alert
-  const [showAlert, setShowAlert] = useState(false);
-  // define mutation for adding a user
-  const [createUser] = useMutation(ADD_USER);
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+   const [validated] = useState(false);
+   const [showAlert, setShowAlert] = useState(false);
+   const [createUser] = useMutation(ADD_USER);
+   const handleInputChange = (event) => {
+   const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
 
@@ -93,13 +88,13 @@ const SignupForm = () => {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+          <Form.Control.Feedback type='invalid'>The Countersign is required!</Form.Control.Feedback>
         </Form.Group>
         <Button
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
-          variant='Excelsior'>
-          Submit
+          variant='success'>
+          Excelsior!
         </Button>
       </Form>
     </>
