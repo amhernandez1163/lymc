@@ -40,7 +40,6 @@ const fetchHero = async (id) => {
 	let hash = getHash(ts, privateKey, apiKey);
 
 	let url = `${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}`;
-	// let url = `https://gateway.marvel.com:443/v1/public/characters/${id}?ts=${ts}&apikey=${apiKey}&hash=${hash}`;
 
 	try {
 		let response = await fetch(url);
