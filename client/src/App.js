@@ -13,6 +13,7 @@ import "./App.css";
 // import / from "./components/SearchBar";
 import Navbar from "./components/Navbar";
 import HeroDetails from "./routes/HeroDetails";
+import Card from "./components/Card";
 // import saveCharacters from "./pages/saveCharacters";
 // import searchCharacters from "./pages/searchCharacters";
 
@@ -47,6 +48,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<SearchBar />} />
+          <Route path="/card" element={<Card />} />
           <Route path="/saved" element={<saveCharacters />} />
           <Route path={"/:id"} element={<HeroDetails />} />
         </Routes>
