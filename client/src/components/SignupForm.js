@@ -82,7 +82,7 @@ const SignupForm = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Label htmlFor="email">Communication</Form.Label>
           <Form.Control
             type="email"
             placeholder="Your email address"
@@ -107,7 +107,7 @@ const SignupForm = () => {
             required
           />
           <Form.Control.Feedback type="invalid">
-            Password is required!
+            The Countersign is required!
           </Form.Control.Feedback>
         </Form.Group>
         <Button
