@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Footer() {
-	return (
-		<div>
-			<a href="https://marvel.com" target="_blank" rel="noreferrer">
-				Data provided by Marvel. © 2014 Marvel (this is the footer)
-			</a>{" "}
-		</div>
-	);
-}
+const Footer = () => {
+  return (
+    <footer className="w-100 mt-auto bg-secondary p-4">
+      <div className="container">Data provided by Marvel. © 2014 Marvel</div>
+    </footer>
+  );
+};
+
+export default Footer;
