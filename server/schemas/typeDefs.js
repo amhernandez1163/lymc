@@ -16,6 +16,13 @@ const typeDefs = gql`
     image: String
   }
 
+  input InputCharacter {
+    characterId: String
+    name: String
+    description: String
+    image: String
+  }
+
   type Auth {
     token: ID!
     user: User
@@ -23,13 +30,13 @@ const typeDefs = gql`
 
   type Query {
     me: User
-    characters: [Characters]
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveCharacter(name: String!, characterId: String!, image: String!): User
+    saveCharacter(newCharacter: InputCharacter!): User
+    removeCharacter(characterId: ID!): User
   }
 `;
 

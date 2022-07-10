@@ -14,10 +14,6 @@ const resolvers = {
       }
       throw new AuthenticationError("I am Groot. Translation: Not logged in!");
     },
-
-    characters: async () => {
-      return Character.find();
-    },
   },
 
   Mutation: {
@@ -32,7 +28,7 @@ const resolvers = {
 
       if (!user) {
         throw new AuthenticationError(
-          "You shall not pass! Invalid credentials"
+          "Invalid credentials! I can do this all day."
         );
       }
 
@@ -40,7 +36,7 @@ const resolvers = {
 
       if (!correctPw) {
         throw new AuthenticationError(
-          "You shall not pass! Invalid credentials"
+          "Invalid credentials! I can do this all day."
         );
       }
 
@@ -53,8 +49,8 @@ const resolvers = {
         console.log(character);
         const updateUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { savedCharacters: character } },
-          { new: true, runValidators: true }
+          { $addToSet: { savedCharacters: newCharacter } },
+          { new: true }
         );
         console.log(updateUser);
         return updateUser;
@@ -62,7 +58,17 @@ const resolvers = {
       throw new AuthenticationError("Puny God, you need to be logged in.");
     },
 
-    // removeCharacter: async (parent, )
+    removeCharacter: async (parent, { characterId }, context) => {
+      if (context.user) {
+        const updateUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedCharacters: { characterId } } },
+          { new: true }
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("Puny God, you need to be logged in.");
+    },
   },
 };
 
