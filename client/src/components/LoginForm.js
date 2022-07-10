@@ -84,7 +84,7 @@ const LoginForm = () => {
             required
           />
           <Form.Control.Feedback type="invalid">
-            Password is required!
+            The Countersign is required!
           </Form.Control.Feedback>
         </Form.Group>
         <Button
