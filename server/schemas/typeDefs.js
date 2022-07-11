@@ -6,10 +6,10 @@ const typeDefs = gql`
 		username: String
 		email: String
 		characterCount: Int
-		savedCharacters: [Characters]
+		savedCharacters: [Character]
 	}
 
-	type Characters {
+	type Character {
 		characterId: ID
 		name: String
 		description: String
@@ -24,7 +24,7 @@ const typeDefs = gql`
 
 	type Query {
 		me: User
-		characters: [Characters]
+		characters: [Character]
 	}
 
 	type Mutation {
@@ -37,6 +37,7 @@ const typeDefs = gql`
 			description: String!
 			series: String
 		): User
+		removeCharacter(characterId: ID!): User
 	}
 `;
 
