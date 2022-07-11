@@ -11,7 +11,16 @@ import {
 import Auth from "../utils/auth";
 import { saveCharacterIds, getSavedCharacterIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/client";
-import { SAVE_BOOK } from "../utils/mutations";
+import { SAVE_CHARACTER } from "../utils/mutations";
+
+// refactor
+import MD5 from "crypto-js/md5";
+
+const API_URL = process.env.REACT_APP_BASE_URL;
+
+const getHash = (ts, secretKey, publicKey) => {
+	return MD5(ts + secretKey + publicKey).toString();
+};
 
 const SearchCharacters = () => {
 	const [searchedCharacters, setSearchedCharacters] = useState([]);
@@ -20,7 +29,7 @@ const SearchCharacters = () => {
 		getSavedCharacterIds()
 	);
 
-	const [saveCharacter, { error }] = useMutation(SAVE_BOOK);
+	const [saveCharacter, { error }] = useMutation(SAVE_CHARACTER);
 
 	useEffect(() => {
 		return () => saveCharacterIds(savedCharacterIds);
@@ -33,9 +42,16 @@ const SearchCharacters = () => {
 			return false;
 		}
 
+		// refactor
+		let baseUrl = `${API_URL}/v1/public/characters`;
+		let ts = Date.now().toString();
+		let apiKey = process.env.REACT_APP_API_KEY;
+		let privateKey = process.env.REACT_APP_PRIVATE_KEY;
+		let hash = getHash(ts, privateKey, apiKey);
+
 		try {
 			const response = await fetch(
-				`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`
+				`${baseUrl}?ts=${ts}&apiKey=${apiKey}&hash=${hash}&nameStartsWith=${query}`
 			);
 
 			if (!response.ok) {
@@ -45,11 +61,10 @@ const SearchCharacters = () => {
 			const { items } = await response.json();
 
 			const characterData = items.map((character) => ({
-				characterId: character.id,
-				authors: character.volumeInfo.authors || ["No author to display"],
-				title: character.volumeInfo.title,
-				description: character.volumeInfo.description,
-				image: character.volumeInfo.imageLinks?.thumbnail || "",
+				image: character.thumbnail.path || "",
+				name: character.name,
+				description: character.description,
+				series: character.series,
 			}));
 
 			setSearchedCharacters(characterData);
@@ -120,13 +135,13 @@ const SearchCharacters = () => {
 								{character.image ? (
 									<Card.Img
 										src={character.image}
-										alt={`The cover for ${character.title}`}
+										alt={`Picture of ${character.name}`}
 										variant="top"
 									/>
 								) : null}
 								<Card.Body>
-									<Card.Title>{character.title}</Card.Title>
-									<p className="small">Authors: {character.authors}</p>
+									<Card.Title>{character.name}</Card.Title>
+									{/* <p className="small">Authors: {character.authors}</p> */}
 									<Card.Text>{character.description}</Card.Text>
 									{Auth.loggedIn() && (
 										<Button

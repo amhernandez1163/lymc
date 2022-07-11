@@ -17,7 +17,7 @@ const fetchCharacters = async (value) => {
 	let hash = getHash(ts, privateKey, apiKey);
 
 	let url = `${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}&nameStartsWith=${value}`;
-
+	// move to search
 	try {
 		let response = await fetch(url);
 		let data = await response.json();
