@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-import Container from "../components/Container";
+import { Container, Flex, Heading, VStack } from "@chakra-ui/react";
+
+// import Container from "../components/Container";
 import SearchBar from "../components/SearchBar";
 import Grid from "../components/Grid";
 import Card from "../components/Card";
@@ -8,26 +10,43 @@ import Card from "../components/Card";
 const IMAGE_SIZE = "portrait_fantastic";
 
 export default function Home() {
-	const [heroes, setHeroes] = useState([]);
+	const [characters, setCharacters] = useState([]);
 
 	let cards;
 
-	if (heroes) {
-		cards = heroes.map((hero) => (
+	if (characters) {
+		cards = characters.map((character) => (
 			<Card
-				name={hero.name}
-				id={hero.id}
-				key={hero.id}
-				thumbnail={`${hero.thumbnail.path}/${IMAGE_SIZE}.${hero.thumbnail.extension}`}
+				name={character.name}
+				id={character.id}
+				key={character.id}
+				thumbnail={`${character.thumbnail.path}/${IMAGE_SIZE}.${character.thumbnail.extension}`}
 			/>
 		));
 	}
 
 	return (
-		<Container>
-			<h1>Discover Marvel Heroes</h1>
-			<SearchBar setter={setHeroes} />
-			<Grid>{cards ? cards : ""}</Grid>
+		<Container
+			className="container"
+			maxW="100%"
+			backgroundImage={
+				"https://terrigen-cdn-dev.marvel.com/content/prod/1x/avas_p_0189_ss13_copy.jpg"
+			}
+		>
+			<VStack spacing={6} justify="center">
+				<Flex backgroundColor={"white"}>
+					<Heading as="h1" size="xl" color="black">
+						Discover Marvel Characters
+					</Heading>
+				</Flex>
+				<Flex padding={"10px"} backgroundColor={"grey"}>
+					<SearchBar setter={setCharacters} />
+				</Flex>
+				<Flex backgroundColor={"white"} width={"200px"} height={"300px"}>
+					Login or sign up to save your favorite Marvel Characters
+				</Flex>
+				<Grid className>{cards ? cards : ""}</Grid>
+			</VStack>
 		</Container>
 	);
 }
