@@ -16,6 +16,7 @@ import HeroDetails from "./routes/HeroDetails";
 import Footer from "./components/Footer";
 import Home from "./routes/Home";
 
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
