@@ -59,7 +59,7 @@ const LoginForm = () => {
           Access Denied! Check your login credentials.
         </Alert>
         <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Label htmlFor="email">Communication</Form.Label>
           <Form.Control
             type="text"
             placeholder="Your email"
@@ -77,14 +77,14 @@ const LoginForm = () => {
           <Form.Label htmlFor="password">Countersign</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Your password"
+            placeholder="The Countersign"
             name="password"
             onChange={handleInputChange}
             value={userFormData.password}
             required
           />
           <Form.Control.Feedback type="invalid">
-            Password is required!
+            The Countersign is required!
           </Form.Control.Feedback>
         </Form.Group>
         <Button
@@ -92,7 +92,7 @@ const LoginForm = () => {
           type="submit"
           variant="success"
         >
-          Exelcisor
+          Excelsior
         </Button>
       </Form>
     </>
