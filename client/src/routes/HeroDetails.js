@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-
+import { Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 import { fetchHero } from "../utils/utils";
+
+import Auth from "../utils/auth";
 
 export default function HeroDetails() {
 	const { id } = useParams();
@@ -50,6 +52,28 @@ export default function HeroDetails() {
 									))}
 								</ul>
 							</div>
+
+							{Auth.loggedIn() && (
+								<Button type="submit" variant="success" size="lg">
+									test button placement
+								</Button>
+
+								// <Button
+								// 	disabled={savedCharacterIds?.some(
+								// 		(savedCharacterId) =>
+								// 			savedCharacterId === character.characterId
+								// 	)}
+								// 	className="btn-block btn-info"
+								// 	onClick={() => handleSaveCharacter(character.characterId)}
+								// >
+								// 	{savedCharacterIds?.some(
+								// 		(savedCharacterId) =>
+								// 			savedCharacterId === character.characterId
+								// 	)
+								// 		? "This character has already been saved!"
+								// 		: "Save this Character!"}
+								// </Button>
+							)}
 						</div>
 					</div>
 				</div>
