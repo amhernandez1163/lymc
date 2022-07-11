@@ -4,9 +4,7 @@ import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 
-
 import Auth from "../utils/auth";
-
 
 // export default function Navbar() {
 // 	return (
@@ -19,7 +17,7 @@ import Auth from "../utils/auth";
 // 				</HStack>
 // 			</Flex>
 // 		</header>
-// 	); 
+// 	);
 // }
 
 const AppNavbar = () => {
@@ -31,7 +29,7 @@ const AppNavbar = () => {
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
-            MCURL
+            LYMC
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
