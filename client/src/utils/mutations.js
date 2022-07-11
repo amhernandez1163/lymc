@@ -34,5 +34,30 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_CHARACTER = gql`
-mutation saveCharacter($)
+	mutation saveCharacter(
+		$name: String!
+		$characterId: String!
+		$image: String!
+		$description: String!
+		$series: String
+	) {
+		saveCharacter(
+			name: $name
+			characterId: $characterId
+			image: $image
+			description: $description
+			series: $series
+		) {
+			_id
+			username
+			email
+			savedCharacters {
+				characterId
+				name
+				description
+				image
+				series
+			}
+		}
+	}
 `;
