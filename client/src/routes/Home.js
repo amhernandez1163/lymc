@@ -4,6 +4,7 @@ import Container from "../components/Container";
 import SearchBar from "../components/SearchBar";
 import Grid from "../components/Grid";
 import Card from "../components/Card";
+import About from "./About";
 
 const IMAGE_SIZE = "portrait_fantastic";
 
@@ -26,6 +27,7 @@ export default function Home() {
 	return (
 		<Container>
 			<h1>Discover Marvel Heroes</h1>
+			<About />
 			<SearchBar setter={setHeroes} />
 			<Grid>{cards ? cards : ""}</Grid>
 		</Container>
