@@ -6,13 +6,13 @@ import { removeBookId } from '../utils/localStorage';
 import { useMutation, useQuery } from '@apollo/client';
 
 const SaveBook = () => {
-  const [removebook] = useMutation (REMOVE_BOOK)
+  const [removeCharacter] = useMutation (REMOVE_BOOK)
   const {data} = useQuery (GET_ME)
   const userData = data?.me || {}
   console.log (data, userData)
   const userDataLenght = Object.keys(userData).length;
 
-  const handleDeleteCharaters = async (characterId) => {
+  const handleDeleteCharacters = async (characterId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -20,13 +20,14 @@ const SaveBook = () => {
     }
     
     try {
-      const {data} = await removeBook ({
-        variables: {bookId: bookId}        
+      const {data} = await removeCharacter ({
+        variables: {characterId: characterId}        
       })
 
-      removeBookId(bookId);
+      removeBookId(characterId);
     }catch (err) {
       console.error(err);
     }
   }; 
+  return )
 }
