@@ -15,7 +15,6 @@ import Navbar from "./components/Navbar";
 import CharacterDetails from "./routes/CharacterDetails";
 import Footer from "./components/Footer";
 import Home from "./routes/Home";
-import About from "./routes/About";
 
 const httpLink = createHttpLink({
 	uri: "/graphql",
