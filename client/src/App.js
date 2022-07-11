@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloProvider,
   ApolloClient,
@@ -11,10 +11,10 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import "./App.css";
 
-import Home from "./routes/Home";
 import Navbar from "./components/Navbar";
 import HeroDetails from "./routes/HeroDetails";
 import Footer from "./components/Footer";
+import Home from "./routes/Home";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -35,37 +35,21 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// function App() {
-// 	return (
-// 		<ApolloProvider client={client}>
-// 			<Router>
-// 				<>
-// 					<Navbar />
-// 					<Routes>
-// 						{/* <Route exact path="/" component={SearchCharacters} /> */}
-// 						{/* <Route exact path="/saved" component={SavedCharacters} /> */}
-// 						<Route render={() => <h1 className="display-2">Wrong page!</h1>} />
-// 					</Routes>
-// 				</>
-// 			</Router>
-// 			<Footer />
-// 		</ApolloProvider>
-// 	);
-// }
-
 function App() {
   return (
+   
     <ChakraProvider>
-      <ApolloProvider client={client}>
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path={"/"} element={<Home />} />
-            <Route path={"/:id"} element={<HeroDetails />} />
-          </Routes>
-          <Footer />
-        </Router>
-      </ApolloProvider>
+    <ApolloProvider client={client}>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/saved" element={<saveCharacters />} />
+          <Route path={"/:id"} element={<HeroDetails />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </ApolloProvider>
     </ChakraProvider>
   );
 }
