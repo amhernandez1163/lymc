@@ -7,6 +7,7 @@ import {
 	createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import "./App.css";
 
@@ -37,18 +38,19 @@ const client = new ApolloClient({
 
 function App() {
 	return (
-		<ApolloProvider client={client}>
-			<Router>
-				<Navbar />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/about" element={<About />} />
-					<Route path="/saved" element={<saveCharacters />} />
-					<Route path={"/:id"} element={<HeroDetails />} />
-				</Routes>
-				<Footer />
-			</Router>
-		</ApolloProvider>
+		<ChakraProvider>
+			<ApolloProvider client={client}>
+				<Router>
+					<Navbar />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/saved" element={<saveCharacters />} />
+						<Route path={"/:id"} element={<HeroDetails />} />
+					</Routes>
+					<Footer />
+				</Router>
+			</ApolloProvider>
+		</ChakraProvider>
 	);
 }
 
