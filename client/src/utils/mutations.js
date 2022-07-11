@@ -61,3 +61,20 @@ export const SAVE_CHARACTER = gql`
 		}
 	}
 `;
+
+export const REMOVE_CHARACTER = gql`
+	mutation removeCharacter($characterId: ID!) {
+		removeCharacter(characterId: $characterId) {
+			_id
+			username
+			email
+			savedCharacters {
+				characterId
+				name
+				description
+				image
+				series
+			}
+		}
+	}
+`;
