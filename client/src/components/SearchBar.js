@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
-import { fetchHeroes } from "../utils/utils";
-import { Input } from '@chakra-ui/react';
-
+import { fetchCharacters } from "../utils/utils";
+import { Input } from "@chakra-ui/react";
 
 export default function SearchBar({ setter }) {
 	let input = useRef("");
@@ -12,8 +11,8 @@ export default function SearchBar({ setter }) {
 		if (value === "") return;
 
 		try {
-			let heroes = await fetchHeroes(value);
-			setter(heroes);
+			let characters = await fetchCharacters(value);
+			setter(characters);
 		} catch (err) {
 			return console.error(err);
 		}

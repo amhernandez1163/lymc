@@ -12,7 +12,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
-import HeroDetails from "./routes/HeroDetails";
+import CharacterDetails from "./routes/CharacterDetails";
 import Footer from "./components/Footer";
 import Home from "./routes/Home";
 import About from "./routes/About";
@@ -45,7 +45,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/saved" element={<saveCharacters />} />
-						<Route path={"/:id"} element={<HeroDetails />} />
+						<Route path={"/:id"} element={<CharacterDetails />} />
 					</Routes>
 					<Footer />
 				</Router>

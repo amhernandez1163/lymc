@@ -11,17 +11,17 @@ import About from "./About";
 const IMAGE_SIZE = "portrait_fantastic";
 
 export default function Home() {
-	const [heroes, setHeroes] = useState([]);
+	const [characters, setCharacters] = useState([]);
 
 	let cards;
 
-	if (heroes) {
-		cards = heroes.map((hero) => (
+	if (characters) {
+		cards = characters.map((character) => (
 			<Card
-				name={hero.name}
-				id={hero.id}
-				key={hero.id}
-				thumbnail={`${hero.thumbnail.path}/${IMAGE_SIZE}.${hero.thumbnail.extension}`}
+				name={character.name}
+				id={character.id}
+				key={character.id}
+				thumbnail={`${character.thumbnail.path}/${IMAGE_SIZE}.${character.thumbnail.extension}`}
 			/>
 		));
 	}
@@ -37,11 +37,11 @@ export default function Home() {
 			<VStack spacing={6} justify="center">
 				<Flex backgroundColor={"white"}>
 					<Heading as="h1" size="xl" color="black">
-						Discover Marvel Heroes
+						Discover Marvel Characters
 					</Heading>
 				</Flex>
 				<Flex padding={"10px"} backgroundColor={"grey"}>
-					<SearchBar setter={setHeroes} />
+					<SearchBar setter={setCharacters} />
 				</Flex>
 				<Flex backgroundColor={"white"} width={"200px"} height={"300px"}>
 					Login or sign up to save your favorite Marvel Characters

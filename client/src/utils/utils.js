@@ -6,7 +6,7 @@ const getHash = (ts, privateKey, apiKey) => {
 	return MD5(ts + privateKey + apiKey).toString();
 };
 
-const fetchHeroes = async (value) => {
+const fetchCharacters = async (value) => {
 	// get api from docs
 	let baseUrl = `${API_URL}/v1/public/characters`;
 
@@ -29,7 +29,7 @@ const fetchHeroes = async (value) => {
 	}
 };
 
-const fetchHero = async (id) => {
+const fetchCharacter = async (id) => {
 	// get api from docs
 	let baseUrl = `${API_URL}/v1/public/characters/${id}`;
 
@@ -52,4 +52,4 @@ const fetchHero = async (id) => {
 	}
 };
 
-export { fetchHeroes, fetchHero };
+export { fetchCharacters, fetchCharacter };
