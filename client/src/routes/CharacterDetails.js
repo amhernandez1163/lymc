@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { fetchHero } from "../utils/utils";
+import { fetchCharacter } from "../utils/utils";
 
-export default function HeroDetails() {
+export default function CharacterDetails() {
 	const { id } = useParams();
 	console.log("id from url", id);
-	const [hero, setHero] = useState();
+	const [character, setCharacter] = useState();
 
 	const getData = async () => {
 		if (id) {
-			fetchHero(id)
+			fetchCharacter(id)
 				.then(async (data) => {
 					console.log("api data response ===", data);
-					await setHero(data.data.results[0]);
+					await setCharacter(data.data.results[0]);
 				})
 				.catch((err) => console.error(err));
 		}
@@ -26,26 +26,26 @@ export default function HeroDetails() {
 
 	return (
 		<>
-			{hero ? (
+			{character ? (
 				<div className="container large">
 					<div className="hero_details-container">
 						<img
-							src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
+							src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
 							alt="Marvel Character"
 						/>
 						<div className="hero_details">
 							<h4>Name</h4>
-							<p>{hero.name}</p>
-							{hero.description ? (
+							<p>{character.name}</p>
+							{character.description ? (
 								<>
 									<h4>Description</h4>
-									<p>{hero.description}</p>
+									<p>{character.description}</p>
 								</>
 							) : null}
 							<div>
 								<h4>Series</h4>
 								<ul>
-									{hero.series.items.map((s) => (
+									{character.series.items.map((s) => (
 										<li key={Math.random() * 1000}>{s.name}</li>
 									))}
 								</ul>
