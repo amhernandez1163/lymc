@@ -1,15 +1,17 @@
 import React from "react";
+import { Flex, Heading, HStack, Link } from "@chakra-ui/react";
+import { Link as RouterLink } from 'react-router-dom';
 
 export default function Navbar() {
 	return (
 		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">(Navbar) Home</a>
-					</li>
-				</ul>
-			</nav>
+			<Flex as="nav" p={6} justifyContent="space-between" alignItems="center">
+				<Heading as="h1" size="md">Marvel Heroes App</Heading>
+				<HStack spacing={6}>
+						<Link as={RouterLink} to="/">Home</Link>
+						<Link as={RouterLink} to="/about">About</Link>
+				</HStack>
+			</Flex>
 		</header>
 	);
 }

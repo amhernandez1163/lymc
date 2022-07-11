@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-import Container from "../components/Container";
+import {Container, Heading, VStack} from "@chakra-ui/react"
+
+// import Container from "../components/Container";
 import SearchBar from "../components/SearchBar";
 import Grid from "../components/Grid";
 import Card from "../components/Card";
@@ -25,9 +27,11 @@ export default function Home() {
 
 	return (
 		<Container>
-			<h1>Discover Marvel Heroes</h1>
-			<SearchBar setter={setHeroes} />
-			<Grid>{cards ? cards : ""}</Grid>
-		</Container>
+		<VStack spacing={6} justify="center">
+		<Heading as="h1" size="xl" color="red">Discover Marvel Heroes</Heading>
+		<SearchBar setter={setHeroes} />
+		<Grid>{cards ? cards : ""}</Grid>
+		</VStack>
+	</Container>
 	);
 }
