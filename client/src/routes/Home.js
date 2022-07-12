@@ -34,11 +34,11 @@ export default function Home() {
 		<Flex padding={'10px'} backgroundColor={'grey'}>
 		<SearchBar setter={setHeroes} />
 		</Flex>
-		<Flex backgroundColor={"white"} border={"4px"} borderColor={'blue'} >Login or sign up to save your favorite Marvel Characters	
+		<Flex backgroundColor={"white"} width={'200px'}>Login or sign up to save your favorite Marvel Characters	
 		</Flex>
-		<Flex backgroundColor={"white"} border={"4px"} borderColor={'blue'} width={'200px'} >
-		<Grid className>{cards ? cards : ""}</Grid>
-		</Flex>
+	
+		<Grid>{cards ? cards : ""}</Grid>
+	
 		</VStack>
 		</Container>
 	);
