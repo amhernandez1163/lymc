@@ -42,7 +42,7 @@ const SavedCharacter = () => {
     <Container>
       <h2>
       {userData?.SavedCharater?.length
-            ? `Viewing ${userData.savedCharater.length} saved ${userData.savedCharater.length === 1 ? 'character' : 'characters'}:`
+            ? `Viewing ${userData.savedCharater.length} saved ${userData.savedCharacter.length === 1 ? 'character' : 'characters'}:`
             : 'You have no saved character!'}
       </h2>
       <CardColumns>
