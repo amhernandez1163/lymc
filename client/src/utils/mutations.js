@@ -34,16 +34,29 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_CHARACTER = gql`
-  mutation saveCharacter($newCharacter: InputCharacter!) {
-    saveCharacter(newCharacter: $newCharacter) {
+  mutation saveCharacter(
+    $name: String!
+    $characterId: String!
+    $image: String!
+    $description: String!
+    $series: String
+  ) {
+    saveCharacter(
+      name: $name
+      characterId: $characterId
+      image: $image
+      description: $description
+      series: $series
+    ) {
       _id
       username
       email
       savedCharacters {
         characterId
-        name: String
-        description: String
-        image: String
+        name
+        description
+        image
+        series
       }
     }
   }
@@ -51,15 +64,16 @@ export const SAVE_CHARACTER = gql`
 
 export const REMOVE_CHARACTER = gql`
   mutation removeCharacter($characterId: ID!) {
-    removeBook(characterId: $characterId) {
+    removeCharacter(characterId: $characterId) {
       _id
       username
       email
       savedCharacters {
         characterId
-        name: String
-        description: String
-        image: String
+        name
+        description
+        image
+        series
       }
     }
   }
