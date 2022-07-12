@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { fetchCharacters } from "../utils/utils";
+// import { searchCharacters } from "../pages/searchCharacters";
 import { Input } from "@chakra-ui/react";
 
 export default function SearchBar({ setter }) {
@@ -12,6 +13,8 @@ export default function SearchBar({ setter }) {
 
 		try {
 			let characters = await fetchCharacters(value);
+			// let characters = await searchCharacters(value);
+
 			setter(characters);
 		} catch (err) {
 			return console.error(err);

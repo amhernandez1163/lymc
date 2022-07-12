@@ -6,6 +6,7 @@ import { Container, Flex, Heading, VStack } from "@chakra-ui/react";
 import SearchBar from "../components/SearchBar";
 import Grid from "../components/Grid";
 import Card from "../components/Card";
+// import About from "./About";
 
 const IMAGE_SIZE = "portrait_fantastic";
 
