@@ -53,6 +53,6 @@ function App() {
     </ApolloProvider>
     </ChakraProvider>
   );
-}
+};
 
 export default App;

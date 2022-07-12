@@ -45,9 +45,11 @@ const AppNavbar = () => {
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
+                  
                   <Nav.Link className="link" as={Link} to="/saved">
                     Saved Characters
                   </Nav.Link>
+                  
                   <Nav.Link className="link" onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
@@ -68,7 +70,7 @@ const AppNavbar = () => {
         aria-labelledby="signup-modal"
       >
         {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey="login">
+        <Tab.Container backgroundImage={'https://terrigen-cdn-dev.marvel.com/content/prod/1x/avas_p_0189_ss13_copy.jpg'} defaultActiveKey="login">
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">
               <Nav variant="pills">
@@ -94,7 +96,7 @@ const AppNavbar = () => {
         </Tab.Container>
       </Modal>
       
-      {/* </Flex> */}
+    
     </>
   );
 };

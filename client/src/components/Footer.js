@@ -7,10 +7,10 @@ export default function Footer() {
 			<Flex backgroundColor={"black"} as="nav" p={4} justifyContent="space-between" alignItems="center">
 				<Heading color={'white'} as="h1" size="md">Data provided by Marvel. © 2014 Marvel </Heading>
 				<HStack color={'white'} fontSize="1.5xl" spacing={6}>
-				<Link  as={RouterLink} to="https://github.com/CDMurr">Amanda Hernandez</Link>
-				<Link  as={RouterLink} to="https://github.com/CDMurr">Evelyn Aguirre</Link>
-				<Link  as={RouterLink} to="https://github.com/CDMurr">Monica Solano</Link>
-				<Link  as={RouterLink} to="https://github.com/CDMurr">Cody Murray</Link>
+				<Link  a href="https://github.com/amhernandez1163" target="_blank" rel="noreferrer noopener" textDecoration={"underline"} >Amanda Hernandez</Link>
+				<Link  a href="https://github.com/EvelynAguirreOrtiz" target="_blank" rel="noreferrer noopener" textDecoration={"underline"} >Evelyn Aguirre</Link>
+				<Link  a href="https://github.com/Bluebear1701" target="_blank" rel="noreferrer noopener" textDecoration={"underline"} >Monica Solano</Link>
+				<Link  a href="https://github.com/CDMurr" target="_blank" rel="noreferrer noopener" textDecoration={"underline"} >Cody Murray</Link>
 				</HStack>
 			</Flex>
 		</footer>
