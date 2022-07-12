@@ -29,13 +29,13 @@ const AppNavbar = () => {
   return (
     <>
       {/* <Flex backgroundColor={'black'} as="nav" p={6} justifyContent="space-between" alignItems="center"> */}
-      <Navbar className="header" bg="dark" variant="dark" expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
           
           <Navbar.Brand as={Link} to="/">
-          <Heading  as="h1" size="3xl">LYMC</Heading>
+          <Heading color={'#ffffff8c'} as="h1" size="3xl">LYMC</Heading>
           </Navbar.Brand>
-      <HStack color={"white"} fontSize="2xl" spacing={6}>
+      <HStack  fontSize="4xl" spacing={6}>
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
             <Nav className="ml-auto">

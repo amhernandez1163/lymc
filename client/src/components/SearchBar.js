@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { fetchHeroes } from "../utils/utils";
-import { Input } from '@chakra-ui/react';
+import { Input, Flex  } from '@chakra-ui/react';
 
 
 export default function SearchBar({ setter }) {
@@ -22,7 +22,9 @@ export default function SearchBar({ setter }) {
 	return (
 		<form>
 			<Input type="text" placeholder="Search here..." ref={input} />
-			<button onClick={handleClick}>Search</button>
+			<Flex textColor={'white'} backgroundColor={'red'} boxShadow={'lg'} borderRadius={'20%'} border={'2px'}>
+			<button onClick={handleClick}>Click here to search</button>
+			</Flex>
 		</form>
 	);
 }

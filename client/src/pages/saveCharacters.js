@@ -1,13 +1,13 @@
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 
 export default function saveCharacters() {
 	return (
-		<footer className="footer fixed-bottom">
-			<Flex backgroundColor={"black"} as="nav" p={4} justifyContent="space-between" alignItems="center">
+		
+			<Container backgroundColor={"black"} >
 				
-			</Flex>
-		</footer>
+			</Container>
+		
 	);
 }
 
