@@ -16,11 +16,7 @@ import { SAVE_CHARACTER } from "../utils/mutations";
 // refactor
 import MD5 from "crypto-js/md5";
 
-const API_URL = process.env.REACT_APP_BASE_URL;
-
-const getHash = (ts, secretKey, publicKey) => {
-	return MD5(ts + secretKey + publicKey).toString();
-};
+// const API_URL = process.env.REACT_APP_BASE_URL;
 
 const SearchCharacters = () => {
 	const [searchedCharacters, setSearchedCharacters] = useState([]);
@@ -35,44 +31,43 @@ const SearchCharacters = () => {
 		return () => saveCharacterIds(savedCharacterIds);
 	});
 
-	const handleFormSubmit = async (event) => {
-		event.preventDefault();
+	// const handleFormSubmit = async (event) => {
+	// 	event.preventDefault();
 
-		if (!searchInput) {
-			return false;
-		}
+	// 	if (!searchInput) {
+	// 		return false;
+	// 	}
 
-		// refactor
-		let baseUrl = `${API_URL}/v1/public/characters`;
-		let ts = Date.now().toString();
-		let apiKey = process.env.REACT_APP_API_KEY;
-		let privateKey = process.env.REACT_APP_PRIVATE_KEY;
-		let hash = getHash(ts, privateKey, apiKey);
+	// refactor
+	// let baseUrl = `${API_URL}/v1/public/characters`;
+	// let ts = Date.now().toString();
+	// let apiKey = process.env.REACT_APP_API_KEY;
+	// let privateKey = process.env.REACT_APP_PRIVATE_KEY;
+	// let hash = getHash(ts, privateKey, apiKey);
 
-		try {
-			const response = await fetch(
-				`${baseUrl}?ts=${ts}&apiKey=${apiKey}&hash=${hash}&nameStartsWith=${query}`
-			);
+	// try {
+	// const response = await fetch(
+	// 	`${baseUrl}?ts=${ts}&apiKey=${apiKey}&hash=${hash}&nameStartsWith=${query}`
+	// );
 
-			if (!response.ok) {
-				throw new Error("Something went wrong!");
-			}
+	// if (!response.ok) {
+	// 	throw new Error("Something went wrong!");
+	// }
 
-			const { items } = await response.json();
+	// const { items } = await response.json();
 
-			const characterData = items.map((character) => ({
-				image: character.thumbnail.path || "",
-				name: character.name,
-				description: character.description,
-				series: character.series,
-			}));
+	// const characterData = items.map((character) => ({
+	// 	image: character.thumbnail.path || "",
+	// 	name: character.name,
+	// 	description: character.description,
+	// 	series: character.series,
+	// }));
 
-			setSearchedCharacters(characterData);
-			setSearchInput("");
-		} catch (err) {
-			console.error(err);
-		}
-	};
+	// 		setSearchInput("");
+	// 	} catch (err) {
+	// 		console.error(err);
+	// 	}
+	// };
 
 	const handleSaveCharacter = async (characterId) => {
 		const characterToSave = searchedCharacters.find(
