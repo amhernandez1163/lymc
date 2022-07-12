@@ -70,7 +70,7 @@ const AppNavbar = () => {
         aria-labelledby="signup-modal"
       >
         {/* tab container to do either signup or login component */}
-        <Tab.Container backgroundImage={'https://terrigen-cdn-dev.marvel.com/content/prod/1x/avas_p_0189_ss13_copy.jpg'} defaultActiveKey="login">
+        <Tab.Container defaultActiveKey="login">
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">
               <Nav variant="pills">

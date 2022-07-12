@@ -38,7 +38,13 @@
 }
 
 
+.container {
+  max-height: fit-content;
+}
 
+button {
+  border: 1px;
+}
 /* .header {
   background-color: grey;
 } */
