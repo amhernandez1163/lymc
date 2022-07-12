@@ -21,7 +21,7 @@ export default function SearchBar({ setter }) {
 
 	return (
 		<form>
-			<Input type="text" placeholder="Search here..." ref={input} />
+			<Input type="text" border={'dashed'} borderColor={'blackAlpha.500'} borderRadius={'2xl'} borderWidth={'thick'} placeholder="Search here..." ref={input} />
 			<Flex textColor={'white'} backgroundColor={'red'} boxShadow={'lg'} borderRadius={'20%'} border={'2px'}>
 			<button onClick={handleClick}>Click here to search</button>
 			</Flex>

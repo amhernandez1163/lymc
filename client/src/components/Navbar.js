@@ -29,7 +29,7 @@ const AppNavbar = () => {
   return (
     <>
       {/* <Flex backgroundColor={'black'} as="nav" p={6} justifyContent="space-between" alignItems="center"> */}
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar className="Navbar sticky-top" bg="dark" variant="dark" expand="lg">
         <Container fluid>
           
           <Navbar.Brand as={Link} to="/">
