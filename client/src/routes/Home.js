@@ -1,27 +1,26 @@
 import React, { useState } from "react";
 
-import {Container, Flex, VStack} from "@chakra-ui/react"
-
-// import Container from "../components/Container";
+import { Container, Flex, Heading, VStack } from "@chakra-ui/react";
 import SearchBar from "../components/SearchBar";
 import Grid from "../components/Grid";
 import Card from "../components/Card";
+// import About from "./About";
 
 
 const IMAGE_SIZE = "portrait_fantastic";
 
 export default function Home() {
-	const [heroes, setHeroes] = useState([]);
+	const [characters, setCharacters] = useState([]);
 
 	let cards;
 
-	if (heroes) {
-		cards = heroes.map((hero) => (
+	if (characters) {
+		cards = characters.map((character) => (
 			<Card
-				name={hero.name}
-				id={hero.id}
-				key={hero.id}
-				thumbnail={`${hero.thumbnail.path}/${IMAGE_SIZE}.${hero.thumbnail.extension}`}
+				name={character.name}
+				id={character.id}
+				key={character.id}
+				thumbnail={`${character.thumbnail.path}/${IMAGE_SIZE}.${character.thumbnail.extension}`}
 			/>
 		));
 	}
@@ -36,7 +35,7 @@ export default function Home() {
 		
 
 		<Flex border={'8px'} borderColor={'silver'} borderStyle={'ridge'}  boxShadow='md' p='6' rounded='md' bg='white' padding={'10px'} backgroundColor={'white'}>
-		<SearchBar  setter={setHeroes} />
+		<SearchBar  setter={setCharacters} />
 		</Flex>
 		<Container border={'8px'} borderColor={'silver'} borderStyle={'ridge'}  boxShadow='md' p='6' rounded='md' bg='white'  backgroundColor={"white"} alignContent={"center"} width={"700px"} fontSize={'2xl'} fontWeight={'bold'} fontFamily={'fantasy'}>Make sure you're up-to-date on all the newest and most classic Marvel characters. As a way to equalize the playing field for people with different levels of Marvel knowledge, this application was created. It can be used by anyone, regardless of their level of fandom. Therefore, we invite you all to come talk Marvel with us. Login or sign up to save your favorite Marvel Characters	
 		</Container>
