@@ -1,31 +1,44 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { fetchCharacters } from "../utils/utils";
-import { Input, Flex  } from '@chakra-ui/react';
-
+import { Input, Flex, Button, VStack } from "@chakra-ui/react";
 
 export default function SearchBar({ setter }) {
-	let input = useRef("");
+    const [input, setInput] = useState("");
 
-	const handleClick = async (e) => {
-		e.preventDefault();
-		let value = input.current.value;
-		if (value === "") return;
+    const handleChange = (e) => {
+        setInput(e.target.value);
+    };
 
-		try {
-			let characters = await fetchCharacters(value);
+    const handleClick = async (e) => {
+        e.preventDefault();
+        if (input === "") return;
 
-			setter(characters);
-		} catch (err) {
-			return console.error(err);
-		}
-	};
+        try {
+            let characters = await fetchCharacters(input);
 
-	return (
-		<form>
-			<Input type="text" border={'dashed'} borderColor={'blackAlpha.500'} borderRadius={'2xl'} borderWidth={'thick'} placeholder="Search here..." ref={input} />
-			<Flex textColor={'white'} backgroundColor={'red'} boxShadow={'lg'} borderRadius={'20%'} border={'2px'}>
-			<button onClick={handleClick}>Click here to search</button>
-			</Flex>
-		</form>
-	);
+            setter(characters);
+        } catch (err) {
+            return console.error(err);
+        }
+    };
+
+    return (
+        <VStack as="form" spacing={2} align="center">
+            <Input
+                type="text"
+                textAlign="center"
+                border={"dashed"}
+                borderColor={"blackAlpha.500"}
+                borderRadius={"2xl"}
+                borderWidth={"thick"}
+                placeholder="Search here..."
+                onChange={handleChange}
+            />
+            {/* <Flex textColor={'white'} backgroundColor={'red'} boxShadow={'lg'} borderRadius={'20%'} border={'2px'}> */}
+            <Button onClick={handleClick} colorScheme="red">
+                Click here to search
+            </Button>
+            {/* </Flex> */}
+        </VStack>
+    );
 }
