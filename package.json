@@ -22,9 +22,5 @@
   "homepage": "https://github.com/amhernandez1163/project-3-mern#readme",
   "devDependencies": {
     "concurrently": "^7.2.2"
-  },
-  "dependencies": {
-    "react-bootstrap": "^2.4.0",
-    "react-iframe": "^1.8.0"
   }
 }
