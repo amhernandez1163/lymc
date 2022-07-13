@@ -13,7 +13,6 @@ export const searchMarvelCharacters = (query) => {
 	let privateKey = process.env.REACT_APP_PRIVATE_KEY;
 	let hash = getHash(ts, privateKey, apiKey);
 
-	// return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
 	return fetch(
 		`${baseUrl}?ts=${ts}&apiKey=${apiKey}&hash=${hash}&nameStartsWith=${query}`
 	);

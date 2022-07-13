@@ -17,8 +17,9 @@ The ability to build and view your profile can be accessed once you sign up or l
 
 Make sure you're up-to-date on all the newest and most classic Marvel characters. As a way to equalize the playing field for people with different levels of Marvel knowledge, this application was created. It can be used by anyone, regardless of their level of fandom. Therefore, we invite you all to come talk Marvel with us.
 
-## MVP Requirements 
-![screenshot](/client/public/assets/img/MVP%20Requirements.png))
+## Screenshot
+
+![screenshot](/client/public/assets/img/Screen%20Shot%20LYMC.png))
 
 ## How to install
 
@@ -28,28 +29,26 @@ Install dependencies with npm install.
 
 ## Contributors
 
-- Amanda Hernandez
-  GitHub:
-  https://github.com/amhernandez1163
+-   Amanda Hernandez
+    GitHub:
+    https://github.com/amhernandez1163
 
-- Evelyn Aguirre
-  GitHub:
-  https://github.com/EvelynAguirreOrtiz
+-   Evelyn Aguirre
+    GitHub:
+    https://github.com/EvelynAguirreOrtiz
 
-- Monica Solonado
-  GitHub:
-  https://github.com/Bluebear1701
+-   Monica Solonado
+    GitHub:
+    https://github.com/Bluebear1701
 
-- Cody Murray
-  GitHub:
-  https://github.com/CDMurr
+-   Cody Murray
+    GitHub:
+    https://github.com/CDMurr
 
 ## Link to live application, deployed on Heroku
 
-https://aLinkWillGoHere
+https://boiling-headland-24136.herokuapp.com/
 
 ## Github repostitory
 
 https://github.com/amhernandez1163/project-3-mern
-
-DELETE THIS LATER

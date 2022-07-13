@@ -3,22 +3,9 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
+import { Heading, HStack } from "@chakra-ui/react";
 
 import Auth from "../utils/auth";
-
-// export default function Navbar() {
-// 	return (
-// 		<header className="header">
-// 			<Flex backgroundColor={'gray'} as="nav" p={6} justifyContent="space-between" alignItems="center">
-// 				<Heading  as="h1" size="md">Marvel Heroes App</Heading>
-// 				<HStack spacing={6}>
-// 						<Link  as={RouterLink} to="/">Home</Link>
-// 						<Link  as={RouterLink} to="/about">About</Link>
-// 				</HStack>
-// 			</Flex>
-// 		</header>
-// 	);
-// }
 
 const AppNavbar = () => {
   // set modal display state
@@ -26,32 +13,44 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      {/* <Flex backgroundColor={'black'} as="nav" p={6} justifyContent="space-between" alignItems="center"> */}
+      <Navbar
+        className="Navbar sticky-top"
+        bg="dark"
+        variant="dark"
+        expand="lg"
+      >
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
-            LYMC
+            <Heading color={"#ffffff8c"} as="h1" size="3xl">
+              LYMC
+            </Heading>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbar" />
-          <Navbar.Collapse id="navbar">
-            <Nav className="ml-auto">
-              <Nav.Link as={Link} to="/">
-                Search the MCU
-              </Nav.Link>
-              {/* if user is logged in show saved books and logout */}
-              {Auth.loggedIn() ? (
-                <>
-                  <Nav.Link as={Link} to="/saved">
-                    Saved Characters
-                  </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-                </>
-              ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>
-                  Login/Sign Up
+          <HStack fontSize="1xl" spacing={6}>
+            <Navbar.Toggle aria-controls="navbar" />
+            <Navbar.Collapse id="navbar">
+              <Nav className="ml-auto">
+                <Nav.Link className="link" as={Link} to="/">
+                  Search the MCU
                 </Nav.Link>
-              )}
-            </Nav>
-          </Navbar.Collapse>
+                {Auth.loggedIn() ? (
+                  <>
+                    <Nav.Link className="link" as={Link} to="/saved">
+                      Saved Characters
+                    </Nav.Link>
+
+                    <Nav.Link className="link" onClick={Auth.logout}>
+                      Logout
+                    </Nav.Link>
+                  </>
+                ) : (
+                  <Nav.Link className="link" onClick={() => setShowModal(true)}>
+                    Login/Sign Up
+                  </Nav.Link>
+                )}
+              </Nav>
+            </Navbar.Collapse>
+          </HStack>
         </Container>
       </Navbar>
       {/* set modal data up */}
