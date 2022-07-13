@@ -29,21 +29,21 @@ Install dependencies with npm install.
 
 ## Contributors
 
--   Amanda Hernandez
-    GitHub:
-    https://github.com/amhernandez1163
+- Amanda Hernandez
+  GitHub:
+  https://github.com/amhernandez1163
 
--   Evelyn Aguirre
-    GitHub:
-    https://github.com/EvelynAguirreOrtiz
+- Evelyn Aguirre
+  GitHub:
+  https://github.com/EvelynAguirreOrtiz
 
--   Monica Solonado
-    GitHub:
-    https://github.com/Bluebear1701
+- Monica Solonado
+  GitHub:
+  https://github.com/Bluebear1701
 
--   Cody Murray
-    GitHub:
-    https://github.com/CDMurr
+- Cody Murray
+  GitHub:
+  https://github.com/CDMurr
 
 ## Link to live application, deployed on Heroku
 
@@ -51,4 +51,4 @@ https://boiling-headland-24136.herokuapp.com/
 
 ## Github repostitory
 
-https://github.com/amhernandez1163/project-3-mern
+https://github.com/amhernandez1163/lymc
